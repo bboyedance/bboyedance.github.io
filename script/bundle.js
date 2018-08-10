@@ -420,7 +420,7 @@
 	    var raycaster;
 	    var mouse;
 
-	    function init() {
+	   function init() {
 
 	        container = document.getElementById('particles');
 
@@ -430,7 +430,7 @@
 
 	        scene = new THREE.Scene();
 
-	        var geometry = new THREE.BoxGeometry(30, 30, 30);
+	        var geometry = new THREE.TetrahedronGeometry(35, 1);
 
 	        function buildCube() {
 
@@ -441,6 +441,9 @@
 	            var color = colors[randomNum];
 
 	            var object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+
+       			 	wireframe: true, 
+        			wireframeLinewidth: 1,
 	                color: color, opacity: 0.9 }));
 	            object.position.x = Math.random() * 800 - 400;
 	            object.position.y = Math.random() * 800 - 400;
